@@ -36,5 +36,16 @@ export {
     FILING_DEADLINE_DAY,
     MINIMUM_WAGE_MONTHLY,
     MINIMUM_WAGE_ANNUAL
-
 } from './brackets.ts'
+
+export type {
+    EmploymentType,
+    IncomeInput,
+    DeductionInput,
+    TaxInput,
+    TaxResult,
+    BracketResult,
+    ReliefBreakdown,
+    PenaltyResult,
+    DeadlineInfo
+} from './types.ts'
