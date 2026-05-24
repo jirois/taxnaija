@@ -1,182 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
-/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
 @import "tailwindcss";
+*:root{
+/* ─────────────────────────────────────────────
+     TYPOGRAPHY
+  ───────────────────────────────────────────── */
 
-
-
-/* ── Colour palette ─────────────────────────────────────────────────────────── */
-
-:root {
-  /* Primary — Nigeria flag green */
-  --green-50:  #E6F4EC;
-  --green-100: #BDE0CB;
-  --green-200: #90C9A7;
-  --green-400: #2E8B57;
-  --green-600: #006B3F;   /* primary action */
-  --green-700: #005230;
-  --green-800: #003A22;
-  --green-900: #002215;
-
-  /* Amber — warnings, tooltips */
-  --amber-50:  #FEF6E7;
-  --amber-100: #FDE8B4;
-  --amber-300: #F5BD4B;
-  --amber-500: #D97706;
-  --amber-700: #924F04;
-
-  /* Red — errors, overdue */
-  --red-50:  #FEF0EF;
-  --red-200: #F7BDBA;
-  --red-500: #DC2626;
-  --red-700: #991B1B;
-
-  /* Blue — info */
-  --blue-50:  #EFF6FF;
-  --blue-200: #BFDBFE;
-  --blue-500: #3B82F6;
-  --blue-700: #1D4ED8;
-
-  /* Neutral grays — warm-tinted */
-  --gray-0:   #FAFAF7;   /* page background */
-  --gray-50:  #F4F4F0;   /* surface / card bg */
-  --gray-100: #E8E8E3;   /* borders default */
-  --gray-200: #D1D1C9;   /* borders emphasis */
-  --gray-400: #9B9B93;   /* placeholder text */
-  --gray-500: #6B6B63;   /* secondary text */
-  --gray-700: #3A3A35;   /* primary text */
-  --gray-900: #1A1A17;   /* headings */
-
-  /* ── Semantic tokens ─────────────────────────────────────────────────── */
-  --color-bg-page:       var(--gray-0);
-  --color-bg-surface:    var(--gray-50);
-  --color-bg-elevated:   #FFFFFF;
-
-  --color-text-primary:  var(--gray-900);
-  --color-text-body:     var(--gray-700);
-  --color-text-muted:    var(--gray-500);
-  --color-text-placeholder: var(--gray-400);
-
-  --color-border:        var(--gray-100);
-  --color-border-strong: var(--gray-200);
-
-  --color-primary:       var(--green-600);
-  --color-primary-hover: var(--green-700);
-  --color-primary-light: var(--green-50);
-  --color-primary-text:  var(--green-800);
-
-  --color-danger:        var(--red-500);
-  --color-danger-light:  var(--red-50);
-  --color-danger-text:   var(--red-700);
-
-  --color-warning:       var(--amber-500);
-  --color-warning-light: var(--amber-50);
-  --color-warning-text:  var(--amber-700);
-
-  --color-info:          var(--blue-500);
-  --color-info-light:    var(--blue-50);
-  --color-info-text:     var(--blue-700);
-
-  /* ── Typography ──────────────────────────────────────────────────────── */
-  --font-display: 'DM Serif Display', Georgia, serif;
-  --font-body:    'Plus Jakarta Sans', 'Segoe UI', sans-serif;
-  --font-mono:    'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
-
-  --text-xs:   11px;
-  --text-sm:   13px;
-  --text-base: 15px;
-  --text-md:   16px;
-  --text-lg:   18px;
-  --text-xl:   22px;
-  --text-2xl:  28px;
-  --text-3xl:  36px;
-
-  --weight-normal: 400;
-  --weight-medium: 500;
-  --weight-semi:   600;
-
-  /* ── Spacing ─────────────────────────────────────────────────────────── */
-  --space-1:  4px;
-  --space-2:  8px;
-  --space-3:  12px;
-  --space-4:  16px;
-  --space-5:  20px;
-  --space-6:  24px;
-  --space-8:  32px;
-  --space-10: 40px;
-  --space-12: 48px;
-
-  /* ── Radii ───────────────────────────────────────────────────────────── */
-  --radius-sm:  4px;
-  --radius-md:  8px;
-  --radius-lg:  12px;
-  --radius-xl:  16px;
-  --radius-pill: 999px;
-
-  /* ── Shadows ─────────────────────────────────────────────────────────── */
-  --shadow-sm: 0 1px 2px 0 rgba(26,26,23,0.06);
-  --shadow-md: 0 2px 8px 0 rgba(26,26,23,0.08);
-  --shadow-focus: 0 0 0 3px rgba(0,107,63,0.18);
-  --shadow-focus-danger: 0 0 0 3px rgba(220,38,38,0.16);
-
-  /* ── Transitions ─────────────────────────────────────────────────────── */
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --duration-fast: 120ms;
-  --duration-base: 180ms;
-  --duration-slow: 280ms;
-
-  /* ── Z-index ─────────────────────────────────────────────────────────── */
-  --z-dropdown: 100;
-  --z-sticky:   200;
-  --z-modal:    300;
-  --z-toast:    400;
+  --font-display: "DM Serif Display", Georgia, serif;
+  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 }
 
-/* ── Global reset ────────────────────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; }
+@theme {
+  /* ─────────────────────────────────────────────
+     CORE BRAND SYSTEM
+  ───────────────────────────────────────────── */
 
-html {
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Green scale (Nigeria identity) */
+  --color-green-50:  #E6F4EC;
+  --color-green-100: #BDE0CB;
+  --color-green-200: #90C9A7;
+  --color-green-400: #2E8B57;
+  --color-green-600: #006B3F;
+  --color-green-700: #005230;
+  --color-green-800: #003A22;
+  --color-green-900: #002215;
+
+  /* Amber */
+  --color-amber-50:  #FEF6E7;
+  --color-amber-100: #FDE8B4;
+  --color-amber-300: #F5BD4B;
+  --color-amber-500: #D97706;
+  --color-amber-700: #924F04;
+
+  /* Red */
+  --color-red-50:  #FEF0EF;
+  --color-red-200: #F7BDBA;
+  --color-red-500: #DC2626;
+  --color-red-700: #991B1B;
+
+  /* Blue */
+  --color-blue-50:  #EFF6FF;
+  --color-blue-200: #BFDBFE;
+  --color-blue-500: #3B82F6;
+  --color-blue-700: #1D4ED8;
+
+  /* ─────────────────────────────────────────────
+     SEMANTIC LAYER (THIS IS WHAT CVA USES)
+  ───────────────────────────────────────────── */
+
+  /* Brand */
+  --color-brand: var(--color-green-600);
+  --color-brand-hover: var(--color-green-700);
+  --color-brand-light: var(--color-green-50);
+
+  /* Surfaces */
+  --color-surface: #F4F4F0;
+  --color-surface-elevated: #FFFFFF;
+
+  /* Text */
+  --color-text-primary: #1A1A17;
+  --color-text-body: #3A3A35;
+  --color-text-muted: #6B6B63;
+  --color-text-placeholder: #9B9B93;
+
+  /* Borders */
+  --color-border: #E8E8E3;
+  --color-border-strong: #D1D1C9;
+
+  /* Status */
+  --color-danger: var(--color-red-500);
+  --color-danger-hover: var(--color-red-700);
+
+  --color-warning: var(--color-amber-500);
+  --color-info: var(--color-blue-500);
+
+  
+
+  /* ─────────────────────────────────────────────
+     RADIUS SYSTEM
+  ───────────────────────────────────────────── */
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 999px;
+}
+
+/* ── Reset ─────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5 {
+  font-family: var(--font-display);
 }
 
 body {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  font-weight: var(--weight-normal);
-  color: var(--color-text-body);
-  background: var(--color-bg-page);
-  line-height: 1.6;
   margin: 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  font-weight: var(--weight-normal);
+  font-family: var(--font-body);
+  background: #FAFAF7;
   color: var(--color-text-primary);
-  line-height: 1.25;
-  margin: 0;
 }
-
-p { margin: 0; }
-a { color: var(--color-primary); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-/* Remove default button styles */
-button {
-  font-family: var(--font-body);
-  cursor: pointer;
-  border: none;
-  background: none;
-  padding: 0;
-}
-
-/* Focus-visible outline — keyboard navigation only */
-:focus-visible {
-  outline: none;
-  box-shadow: var(--shadow-focus);
-}
-
-/* Naira figures use display font */
-.font-display { font-family: var(--font-display); }
-.font-mono    { font-family: var(--font-mono); }
