@@ -42,9 +42,9 @@ const iconButton = cva(
       },
 
       size: {
-        sm: "h-7 w-7 text-[14px]",
-        md: "h-9 w-9 text-[16px]",
-        lg: "h-11 w-11 text-[20px]",
+        sm: "h-9 w-9 sm:h-8 sm:w-8",
+        md: "h-11 w-11 sm:h-9 sm:w-9",
+        lg: "h-13 w-13 sm:h-11 sm:w-11",
       },
     },
 

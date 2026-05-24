@@ -12,6 +12,7 @@ const tooltip = cva(
     "font-body text-xs leading-[1.5]",
     "bg-gray-900 text-[#FAFAF7]",
     "transition-opacity duration-150 ease-out",
+    "hidden sm:block",
   ],
   {
     variants: {

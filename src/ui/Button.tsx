@@ -10,6 +10,7 @@ const button = cva(
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
     "disabled:opacity-50 disabled:pointer-events-none",
     "active:scale-[0.98]",
+    "touch-manipulation",
   ],
   {
     variants: {
@@ -27,9 +28,9 @@ const button = cva(
       },
 
       size: {
-        sm: "h-8 px-3 text-sm",
-        md: "h-10 px-4 text-sm",
-        lg: "h-12 px-6 text-base",
+        sm: "h-9 sm:h-8 px-3 text-xs sm:text-sm",
+        md: "h-11 sm:h-10 px-4 text-sm",
+        lg: "h-13 sm:h-12 px-5 text-base",
       },
 
       fullWidth: {
@@ -44,7 +45,7 @@ const button = cva(
   },
 );
 
-type Props = React.ButtonHTMLAttributes<HTMLButtonElement> &
+export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   VariantProps<typeof button> & {
     loading?: boolean;
     leftIcon?: React.ReactNode;
@@ -62,7 +63,7 @@ export function Button({
   children,
   disabled,
   ...props
-}: Props) {
+}: ButtonProps) {
   const isDisabled = disabled || loading;
 
   return (

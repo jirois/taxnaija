@@ -87,6 +87,26 @@
   --radius-lg: 12px;
   --radius-xl: 16px;
   --radius-pill: 999px;
+
+    /* SPACING */
+      --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-8: 32px;
+
+      /* touch-safe spacing */
+    --space-touch-sm: 36px;
+    --space-touch-md: 44px;
+    --space-touch-lg: 52px;
+
+    /* TEXT */
+    --text-fluid-sm: clamp(12px, 2vw, 13px);
+    --text-fluid-base: clamp(14px, 2.2vw, 15px);
+    --text-fluid-md: clamp(15px, 2.5vw, 16px);
+    --text-fluid-lg: clamp(16px, 3vw, 18px);
 }
 
 /* ── Reset ─────────────────────────────────── */
@@ -124,4 +144,14 @@ body {
 
 .animate-indeterminate {
   animation: indeterminate 1.4s ease-in-out infinite;
+}
+
+@keyframes tn-shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.animate-shimmer {
+  /* background-size: 200% 100%; */
+  animation: tn-shimmer 1.4s infinite linear;
 }

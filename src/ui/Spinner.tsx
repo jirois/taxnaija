@@ -6,9 +6,9 @@ import { cn } from "../lib/cn";
 const spinnerVariants = cva("inline-block animate-spin shrink-0", {
   variants: {
     size: {
-      sm: "h-4 w-4",
-      md: "h-6 w-6",
-      lg: "h-10 w-10",
+      sm: "h-4 w-4 sm:h-3 sm:w-3",
+      md: "h-5 w-5 sm:h-4 sm:w-4",
+      lg: "h-8 w-8 sm:h-6 sm:w-6",
     },
     color: {
       primary: "text-brand",

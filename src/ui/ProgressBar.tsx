@@ -40,7 +40,7 @@ export function ProgressBar({
   const pct = isIndeterminate ? undefined : Math.max(0, Math.min(100, value));
 
   return (
-    <div className={cn("w-full", className)}>
+    <div className={cn("w-full h-1 sm:h-1.5 md:h-2", className)}>
       {/* Label */}
       {showLabel && pct !== undefined && (
         <div className="flex items-center justify-between mb-1.5 text-xs text-text-muted font-medium">
