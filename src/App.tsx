@@ -1,33 +1,28 @@
-import { EmptyState } from "./ui/EmptyState";
+import { AccordionGroup } from "./ui/AccordionItem";
 export default function App() {
   return (
     <div className="text-red text-3xl font-bold">
       <h1>TaxNaija</h1>
 
-      <EmptyState
-        title="No tax records yet"
-        description="Your submitted filings will appear here once you complete your first return."
-      />
-
-      <EmptyState
-        icon="ti ti-calculator"
-        title="No calculation yet"
-        description="Enter your income to see your tax breakdown."
-        action={{
-          label: "Start calculation",
-          onClick: () => console.log("Navigate to calculator"),
-          variant: "primary",
-        }}
-      />
-
-      <EmptyState
-        icon="ti ti-wifi-off"
-        title="Unable to load data"
-        description="Check your connection and try again."
-        action={{
-          label: "Retry",
-          onClick: () => window.location.reload(),
-        }}
+      <AccordionGroup
+        defaultOpenId="q1"
+        items={[
+          {
+            id: "q1",
+            question: "What is TaxNaija?",
+            answer: "TaxNaija helps Nigerians calculate taxes easily.",
+          },
+          {
+            id: "q2",
+            question: "Do I need to register?",
+            answer: "No, you can use it without registration.",
+          },
+          {
+            id: "q3",
+            question: "Is it mobile friendly?",
+            answer: "Yes, it's fully responsive.",
+          },
+        ]}
       />
     </div>
   );

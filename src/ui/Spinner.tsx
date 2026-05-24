@@ -1,4 +1,3 @@
-import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "../lib/cn";
 
@@ -63,7 +62,7 @@ export function SpinnerOverlay({ label = "Loading" }: { label?: string }) {
       role="status"
       aria-label={label}
       className="
-     fixed inset-0 z-[300]
+     fixed inset-0 z-300
      flex items-center justify-center
      bg-[rgba(250,250,247,0.72)]
      backdrop-blur-[2px]
