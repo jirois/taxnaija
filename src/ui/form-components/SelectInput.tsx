@@ -167,7 +167,7 @@ export function SelectInput({
               disabled,
               empty: !value,
             }),
-            "max-width: 100% min-w-0 max-w-full truncate",
+            "w-full  max-width: 100% min-w-0 max-w-full truncate",
             "text-sm sm:text-base",
             "pr-10",
           )}
