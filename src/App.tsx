@@ -1,4 +1,4 @@
-import { FormStep } from "./ui/form-components/FormStep";
+import { TooltipChip } from "./ui/components/TooltipChip";
 
 export default function App() {
   return (
@@ -6,20 +6,17 @@ export default function App() {
       <div className="text-red text-3xl font-bold">
         <h1>TaxNaija</h1>
       </div>
-      <div>
-        <FormStep
-          stepNumber={5}
-          title="Review & Submit"
-          subtitle="Confirm all details before generating your tax PDF"
-          nav={{
-            onBack: () => console.log("back"),
-            onContinue: () => console.log("submit"),
-            isFinalStep: true,
-            continueLoading: false,
-          }}
-        >
-          <div>Summary goes here...</div>
-        </FormStep>
+
+      <div style={{ display: "flex", gap: 12 }}>
+        <TooltipChip label="Rent relief">
+          You can claim up to 20% of rent paid annually, capped at ₦500,000
+          under NTA 2025.
+        </TooltipChip>
+
+        <TooltipChip label="Pension (8%)">
+          Mandatory employee contribution under the Pension Reform Act 2014.
+          Typically 8% of your monthly salary.
+        </TooltipChip>
       </div>
     </>
   );

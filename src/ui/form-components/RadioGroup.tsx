@@ -191,7 +191,7 @@ export function RadioGroup({
                 className={cn(radioDot({ selected: isSelected }))}
               >
                 {isSelected && (
-                  <span className="w-[7px] h-[7px] rounded-full bg-white" />
+                  <span className="w-1.75 h-1.75 rounded-full bg-white" />
                 )}
               </span>
               {/* Icon */}
