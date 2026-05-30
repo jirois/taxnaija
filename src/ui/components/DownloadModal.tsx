@@ -79,7 +79,7 @@ const formatOption = cva(
 const formatIcon = cva("mt-0.5 shrink-0 text-xl transition-colors", {
   variants: {
     selected: {
-      true: "text-primary",
+      true: "text-text-primary",
       false: "text-text-muted",
     },
   },
@@ -115,10 +115,6 @@ export function DownloadModal({
   };
 
   const summaryRows = [
-    {
-      label: "Taxpayer",
-      value: taxpayerName,
-    },
     {
       label: "Taxpayer",
       value: taxpayerName,
@@ -190,10 +186,10 @@ export function DownloadModal({
               aria-hidden="true"
             />
             <div>
-              <p className="font-body text-sm font-medium text-white">
+              <p className="font-body text-lg font-medium text-primary">
                 Return summary
               </p>
-              <p className="font-body text-xs text-white/75">
+              <p className="font-body text-xs text-text-body">
                 {stateOfRes} NRS - NTA 2025 - {taxResult.taxYear} tax year
               </p>
             </div>
@@ -215,10 +211,12 @@ export function DownloadModal({
                   <span
                     className={
                       isTax
-                        ? "font-display text-lg text-primary"
+                        ? "font-display text-lg text-primary-text"
                         : "font-body text-sm font-medium text-text-primary"
                     }
-                  ></span>
+                  >
+                    {row.value}
+                  </span>
                 </div>
               );
             })}

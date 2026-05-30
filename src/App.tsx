@@ -1,47 +1,27 @@
 import { useState } from "react";
-
-import { DownloadModal } from "./ui/components/DownloadModal";
-import type { TaxResult } from "./tax-engine/types";
-import { Button } from "./ui/Button";
+import { SaveProgressModal } from "./ui/components/SaveProgressModal";
 
 export default function App() {
-  const [open, setOpen] = useState(false);
+  const [saveOpen, setSaveOpen] = useState(false);
 
-  const taxResult: TaxResult = {
-    taxYear: 2025,
-    taxAct: "NTA 2025",
-    annualSalary: 2400000,
-    otherIncome: 0,
-    grossIncome: 2400000,
-
-    reliefs: {
-      pension: 192000,
-      rent: 240000,
-      insurance: 0,
-      nhf: 0,
-      nhis: 0,
-      total: 432000,
-    },
-
-    chargeableIncome: 1968000,
-    bracketResults: [],
-    annualTax: 175200,
-    monthlyTax: 14600,
-
-    zeroRateBandApplied: false,
-    minimumWageExempt: false,
-
-    effectiveRate: 0.073,
-    effectiveRateOnChargeable: 0.089,
+  // 👇 your main form state (example)
+  const [formData, setFormData] = useState({
+    income: 50000 as number,
+    state: "",
+    employmentType: "employed",
+  });
+  // -------------------------------
+  // 1. OPEN MODAL (manual trigger)
+  // -------------------------------
+  const openSaveModal = () => {
+    setSaveOpen(true);
   };
 
-  const handleDownload = async (format: "return" | "computation") => {
-    console.log("Generating:", format);
-
-    // Generate PDF here
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    console.log("Download complete");
+  // -------------------------------
+  // 2. CLOSE MODAL
+  // -------------------------------
+  const closeSaveModal = () => {
+    setSaveOpen(false);
   };
 
   return (
@@ -49,20 +29,43 @@ export default function App() {
       <div className="text-red text-3xl font-bold">
         <h1>TaxNaija</h1>
       </div>
-      <div className="bg-primary-light text-amber-200">
-        <h2>Heading test</h2>
-      </div>
-      <Button variant="primary" onClick={() => setOpen(true)}>
-        Download Return
-      </Button>
 
-      <DownloadModal
-        open={open}
-        onClose={() => setOpen(false)}
-        taxResult={taxResult}
-        taxpayerName="Ajiri Omas"
-        stateOfRes="Delta"
-        onDownload={handleDownload}
+      <button onClick={openSaveModal}>Save Progress</button>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+        <input
+          placeholder="Income"
+          value={formData.income ?? ""}
+          onChange={(e) =>
+            setFormData((prev) => ({
+              ...prev,
+              income: Number(e.target.value),
+            }))
+          }
+        />
+
+        <input
+          placeholder="State"
+          value={formData.state ?? ""}
+          onChange={(e) =>
+            setFormData((prev) => ({
+              ...prev,
+              state: e.target.value,
+            }))
+          }
+        />
+      </div>
+
+      {/* =========================
+          SAVE PROGRESS MODAL
+      ========================== */}
+      <SaveProgressModal
+        open={saveOpen}
+        onClose={closeSaveModal}
+        formData={{
+          state: formData.state,
+        }}
+        fileName="taxnaija-progress"
       />
     </>
   );

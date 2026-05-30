@@ -19,12 +19,13 @@ const button = cva(
           "bg-brand text-white border-brand hover:opacity-90 focus-visible:ring-brand ",
 
         secondary:
-          "bg-surface text-brand border-border hover:bg-surface-elevated",
+          "bg-bg-surface text-brand border-border hover:bg-surface-elevated",
 
-        ghost: "bg-transparent border-transparent text-muted hover:bg-surface",
+        ghost:
+          "bg-transparent border-transparent text-text-muted hover:bg-bg-surface",
 
         danger:
-          "bg-danger text-white border-danger hover:opacity-90 focus-visible:ring-danger",
+          "bg-[var(--color-red-500)] text-white border-danger hover:opacity-90 focus-visible:ring-danger",
       },
 
       size: {
