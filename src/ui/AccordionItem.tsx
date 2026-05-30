@@ -114,11 +114,11 @@ export function AccordionItem({
 // --- Accordion Group ---
 
 export interface AccordionGroupProps {
-  items: Array<{
+  items: readonly {
     id: string;
     question: React.ReactNode;
     answer: React.ReactNode;
-  }>;
+  }[];
   defaultOpenId?: string;
 }
 
