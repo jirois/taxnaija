@@ -67,6 +67,7 @@
   --color-brand: var(--color-green-600);
   --color-brand-hover: var(--color-green-700);
   --color-brand-light: var(--color-green-50);
+  --color-brand-text: var(--color-green-800)
 
   --color-bg-page:       var(--gray-0);
   --color-bg-surface:    var(--gray-50);
@@ -80,10 +81,10 @@
   --color-border:        var(--gray-100);
   --color-border-strong: var(--gray-200);
 
-  --color-primary:       var(--green-600);
+  /* --color-primary:       var(--green-600);
   --color-primary-hover: var(--green-700);
   --color-primary-light: var(--green-50);
-  --color-primary-text:  var(--green-800);
+  --color-primary-text:  var(--green-800); */
 
   --color-danger:        var(--red-500);
   --color-danger-light:  var(--red-50);

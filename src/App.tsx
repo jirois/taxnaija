@@ -1,72 +1,29 @@
 import { useState } from "react";
-import { SaveProgressModal } from "./ui/components/SaveProgressModal";
+import { StatePortalCard } from "./ui/components/StatePortalCard";
 
 export default function App() {
-  const [saveOpen, setSaveOpen] = useState(false);
-
-  // 👇 your main form state (example)
-  const [formData, setFormData] = useState({
-    income: 50000 as number,
-    state: "",
-    employmentType: "employed",
-  });
-  // -------------------------------
-  // 1. OPEN MODAL (manual trigger)
-  // -------------------------------
-  const openSaveModal = () => {
-    setSaveOpen(true);
-  };
-
-  // -------------------------------
-  // 2. CLOSE MODAL
-  // -------------------------------
-  const closeSaveModal = () => {
-    setSaveOpen(false);
-  };
-
+  const [stateOfResidence, setStateOfResidence] = useState("Lagos");
   return (
     <>
-      <div className="text-red text-3xl font-bold">
-        <h1>TaxNaija</h1>
+      <h1 className="text-red-600 text-3xl font-bold">TaxNaija</h1>
+
+      <div className="max-w-3xl mx-auto p-6 space-y-4">
+        <select
+          value={stateOfResidence}
+          onChange={(e) => setStateOfResidence(e.target.value)}
+          className="w-full rounded-md border border-border bg-bg-elevated p-3"
+        >
+          <option value="Lagos">Lagos</option>
+          <option value="Rivers">Rivers</option>
+          <option value="Oyo">Oyo</option>
+          <option value="Delta">Delta</option>
+          <option value="Enugu">Enugu</option>
+          <option value="Kano">Kano</option>
+          <option value="FCT Abuja">FCT Abuja</option>
+        </select>
+
+        <StatePortalCard stateOfResidence={stateOfResidence} />
       </div>
-
-      <button onClick={openSaveModal}>Save Progress</button>
-
-      <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-        <input
-          placeholder="Income"
-          value={formData.income ?? ""}
-          onChange={(e) =>
-            setFormData((prev) => ({
-              ...prev,
-              income: Number(e.target.value),
-            }))
-          }
-        />
-
-        <input
-          placeholder="State"
-          value={formData.state ?? ""}
-          onChange={(e) =>
-            setFormData((prev) => ({
-              ...prev,
-              state: e.target.value,
-            }))
-          }
-        />
-      </div>
-
-      {/* =========================
-          SAVE PROGRESS MODAL
-      ========================== */}
-      <SaveProgressModal
-        open={saveOpen}
-        onClose={closeSaveModal}
-        formData={{
-          state: formData.state,
-        }}
-        fileName="taxnaija-progress"
-      />
     </>
   );
 }
