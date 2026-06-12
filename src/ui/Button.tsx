@@ -23,6 +23,8 @@ const button = cva(
 
         ghost:
           "bg-transparent border-transparent text-text-muted hover:bg-bg-surface",
+        outline:
+          "bg-transparent border-brand text-brand hover:bg-brand hover:text-white",
 
         danger:
           "bg-[var(--color-red-500)] text-white border-danger hover:opacity-90 focus-visible:ring-danger",

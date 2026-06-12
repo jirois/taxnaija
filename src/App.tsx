@@ -1,20 +1,7 @@
-import { LandingPage } from "./pages/Landing";
+import { CalculatorPage } from "./pages/CalculatorPage";
+import { useNavigate } from "react-router-dom";
 
 export default function App() {
-  return (
-    <>
-      <LandingPage
-        lang="en"
-        onStartFiling={() => {
-          console.log("Navigate to filing flow");
-        }}
-        onCalculate={() => {
-          console.log("Navigate to calculator");
-        }}
-        onLearn={() => {
-          console.log("Navigate to learn page");
-        }}
-      />
-    </>
-  );
+  const navigate = useNavigate();
+  return <CalculatorPage lang="en" onStartFiling={() => navigate("/file")} />;
 }
