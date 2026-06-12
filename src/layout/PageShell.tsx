@@ -26,23 +26,25 @@ export function PageShell({
   noPad = false,
   children,
 }: PageShellProps) {
-  <div className="flex flex-col min-h-screen bg-">
-    <Topbar
-      currentPath={currentPath}
-      lang={lang}
-      onLangChange={onLangChange}
-      saveStatus={saveStatus}
-      onLogoClick={onLogoClick}
-      onNavClick={onNavClick}
-    />
-    <main
-      id="main-content"
-      tabIndex={-1}
-      className={`flex-1 w-full ${noPad ? "" : "mx-auto px-6"}`}
-      style={{ maxWidth: noPad ? undefined : maxWidth }}
-    >
-      {children}
-    </main>
-    <Footer onNavClick={onNavClick} />
-  </div>;
+  return (
+    <div className="flex flex-col min-h-screen bg-">
+      <Topbar
+        currentPath={currentPath}
+        lang={lang}
+        onLangChange={onLangChange}
+        saveStatus={saveStatus}
+        onLogoClick={onLogoClick}
+        onNavClick={onNavClick}
+      />
+      <main
+        id="main-content"
+        tabIndex={-1}
+        className={`flex-1 w-full ${noPad ? "" : "mx-auto px-6"}`}
+        style={{ maxWidth: noPad ? undefined : maxWidth }}
+      >
+        {children}
+      </main>
+      <Footer onNavClick={onNavClick} />
+    </div>
+  );
 }
