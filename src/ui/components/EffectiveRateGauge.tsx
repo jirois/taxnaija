@@ -23,8 +23,8 @@ export interface EffectiveRateGaugeProps {
 
 export function EffectiveRateGauge({
   effectiveRate,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  chargeableIncome,
+
+  // chargeableIncome,
   annualTax,
   size = 200,
   className,

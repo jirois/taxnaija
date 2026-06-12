@@ -43,7 +43,7 @@ export function Footer({ onNavClick }: FooterProps) {
   ];
 
   return (
-    <footer className="mt-auto border-t bg-background">
+    <footer className="mt-4 sm:mt-8 border-t bg-background ">
       <DisclaimerBanner />
 
       {/* Main Footer */}
